@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 25px;
+    column-gap: 0px;
+}
+
+.col-2{
+    width: 50%;    
+}
+.col-2 img{
+    width: 50%;    
+}

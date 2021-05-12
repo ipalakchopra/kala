@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+   
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">        
+            <div class="navbar">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Kala" width="125px">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="{% static 'images/cart.png' %}" width="30px" height="30px" alt="cart">
+            </div>
+            <div class="searchbar">
+                <input class="input" type="text" placeholder="Search">
+                <button class="button" type="submit">Submit</button>
+            </div>
+            
+        </div>
+    </div>
+
+    {% block body %} {% endblock %}
+
+     <!-- footer -->
+     <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">                   
+                    <li><a href="">Coupons</a></li>
+                    <li><a href="">Return Policy</a></li>
+                    <li><a href="">Sell</a></li>
+                    <li><a href="">Work with us</a></li>
+                </div>
+                <div class="footer-col-1">
+                    <h3>Follow us:</h3>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Twitter</a></li>
+                    <li><a href="">YouTube</a></li>
+                    <li><a href="">Facebook</a></li>
+                </div>
+            </div>
+        </div>
+    </div>

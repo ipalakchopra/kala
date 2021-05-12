@@ -1,0 +1,55 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+
+{% block title %}Kala Home{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/stylehome.css' %}">
+<div class="row">
+    <div class="col-2">
+        <h1>Find art that comes straight from the heart...</h1>
+        <p>A place for independant artists to sell their art <br> and a place to buy great art from.</p>
+    </div>
+    
+</div>
+
+<!-- categories -->
+<div class="categories">
+    <div class="smallcat">
+        <div class="row">
+            <div class="col-4">
+                <img src="{% static 'images/acc.jpg' %}" width="300px" height="200px" alt="Accesories">
+            </div>
+            <div class="col-4">
+                <img src="{% static 'images/app.jpg' %}" width="300px" height="200px" alt="Apparels">
+            </div>
+            <div class="col-4">
+                <img src="{% static 'images/dec.jpg' %}" width="300px" height="200px" alt="Decor">
+            </div>
+            <div class="col-4">
+                <img src="{% static 'images/paintings.jpg' %}" width="300px" height="200px" alt="Paintings">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- products -->
+<div class="smallcontainer">
+    <div class="smallcat2">
+        <h2>Featured Products</h2>
+        <div class="row">
+            {% for prod in prod %}
+            <a href="product/{{prod.id}}">
+                <div class="col-3">
+                    <img src="{{prod.image}}" width="300px" height="200px">
+                    <h4>{{prod.product_name}}</h4>
+                    <p>{{prod.price}}</p>
+                </div>
+            </a>
+            
+            {% endfor %}
+          
+        </div>
+    </div>
+</div>
+
+{% endblock %}  
