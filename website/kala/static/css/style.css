@@ -31,7 +31,7 @@ a{
 }
 .searchbar{
     position: relative;
-    background: palevioletred;
+    background: #c86b25ff;
     width: 100%;
     padding: 5px;
     border-radius: 5px;
@@ -68,7 +68,7 @@ p{
 
 
 .header{
-    background: radial-gradient(white,#ffd6d6);
+    background: radial-gradient(white,#fed56fff);
     
 }
 
