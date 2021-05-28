@@ -39,8 +39,6 @@ def sell(request):
         form = ProductForm()
     return render(request, 'sell.html', {'form' : form})
 
-    '''prod = (request.POST)
-    Product.objects.create(product_name = prod['product_name'], category = prod['category'], desc = prod['desc'], price = prod['price'], image = prod['image'])    '''
-    #return render(request,'sell.html') 
-    
-    
+def allproducts(request):
+    prod = Product.objects.all()   
+    return render(request,'allproducts.html',{'prod' : prod})    

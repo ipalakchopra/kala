@@ -3,6 +3,7 @@ from . import views
 from django.http import HttpResponse
 from django.contrib import admin
 
+
 urlpatterns=[
     path('', views.home, name = 'Home'),
     path('about', views.about, name = 'About'),
@@ -11,5 +12,6 @@ urlpatterns=[
     path('search', views.search, name = 'Search'),
     path('checkout', views.checkout, name = 'Checkout'),
     path('product/<int:prodid>', views.product, name = 'Product'),
-    path('sell/', views.sell, name = 'Sell'),    
-]
+    path('sell', views.sell, name = 'Sell'),
+    path('products', views.allproducts, name = 'Products'),    
+] 
