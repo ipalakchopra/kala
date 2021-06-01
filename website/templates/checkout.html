@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title %}Checkout{% endblock %}
+{% block body %}
+<div class="input">
+    <img class="img" src="{{prod.image.url}}" width="90%" >
+    <h4>{{prod.product_name}}</h4>
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
