@@ -1,13 +1,13 @@
 from django.db import models
-
+from datetime import date
 # Create your models here.
 class Product(models.Model):
-    product_id = models.AutoField
+    id = models.AutoField
     product_name = models.CharField(max_length = 50)
     category = models.CharField(max_length=50, default='')
     price = models.IntegerField(default = 0)
     desc = models.CharField(max_length = 300)
-    pub_date = models.DateField(default='2002-09-09')
+    pub_date = models.DateField(default=date.today)
     image = models.ImageField(upload_to="static/images",default='')
     
     def __str__(self):

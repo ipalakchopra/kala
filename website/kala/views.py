@@ -1,3 +1,4 @@
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render,redirect,HttpResponse
 from django.views.generic import ListView
 from kala.models import Product
@@ -5,9 +6,9 @@ from .forms import ProductForm
 # Create your views here.
 
 def home(request):
-    prod = Product.objects.all()   
+    prod = Product.objects.all()  
+    print({'prod' : prod}) 
     return render(request,'home.html',{'prod' : prod})
-
 
 def about(request):
     return render(request,'about.html')
@@ -34,7 +35,9 @@ def sell(request):
   
         if form.is_valid():
             form.save()
-            return HttpResponse('successfully uploaded')
+            prod = Product.objects.order_by('-id')[:1]
+            print({'prod' : prod}) 
+            return render(request,'product.html',{'prod':prod[0]}) 
     else:
         form = ProductForm()
     return render(request, 'sell.html', {'form' : form})
