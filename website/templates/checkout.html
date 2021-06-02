@@ -3,10 +3,11 @@
 
 {% block title %}Checkout{% endblock %}
 {% block body %}
+<link rel="stylesheet" href="{% static 'css/stylecheckout.css' %}">
 <div class="input">
-    <img class="img" src="{{prod.image.url}}" width="90%" >
+    <img class="img" src="{{prod.image.url}}" width="20%" >
     <h4>{{prod.product_name}}</h4>
-    <form method = "post" enctype="multipart/form-data">
+    <form method = "post" enctype="multipart/form-data" class="col-2">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>

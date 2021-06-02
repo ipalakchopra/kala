@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.input{
+    display:inline-flex;
+    align-items:centre;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 25px;
+    column-gap: 0px;
+
+}
+
+.col-2{
+    width: 50%;
+}
