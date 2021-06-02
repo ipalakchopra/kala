@@ -1,6 +1,6 @@
+#from website.kala.views import product
 from django.db import models
 from datetime import date, datetime, time
-
 from django.db.models.fields import EmailField
 # Create your models here.
 class Product(models.Model):
@@ -19,6 +19,7 @@ class Checkout(models.Model):
     id = models.AutoField
     customer_name = models.CharField(max_length = 100)
     customer_email = models.EmailField()
+    product_id = models.IntegerField(default=0)
     payment_choice = (
         ('Cash on Delivery','Cash on Delivery'),
         ('Credit/Debit Card','Credit/Debit Card'),

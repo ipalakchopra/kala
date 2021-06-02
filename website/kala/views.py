@@ -49,17 +49,19 @@ def allproducts(request):
 
 def checkout(request,prodid):
     prod = Product.objects.filter(id=prodid)
-    
+
     if request.method == 'POST':
        
         form = CheckoutForm(request.POST, request.FILES)
         
         if form.is_valid():
-            form.save()
+            form_f = form.save(commit=False)
+            form_f.product_id = prodid
+            form_f.save()
             customer_email = form.cleaned_data['customer_email']
             subject = 'Order Placed!'
-            message = 'Your order has been placed'
-            send_mail(subject,message,'perseforwork@gmail.com',[customer_email])
+            message = 'Your order of {0} has been placed\nOrder number: {1}\nThank you for shopping with us and supporting independant artists!'.format(prod[0],form_f.id) 
+            send_mail(subject,message,'shopart.kala@gmail.com',[customer_email])
     else:
         form = CheckoutForm()
     return render(request, 'checkout.html', {'form' : form,'prod':prod[0]})
